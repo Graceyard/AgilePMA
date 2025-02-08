@@ -198,7 +198,7 @@ st.success(str(loan_outcome[prediction][0]))
 
 
 # Display a feedback widget with thumbs up/down
-sentiment_mapping = [":material/thumb_down:", ":material/thumb_up:"]
+sentiment_mapping = [":material/thumb_up:", ":material/thumb_down:"]
 selected = st.radio("Please provide your feedback", sentiment_mapping, index=1)
 
 # If thumbs down is selected, show feedback box and submit button
