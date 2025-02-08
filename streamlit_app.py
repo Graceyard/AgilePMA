@@ -165,23 +165,8 @@ df_prediction_proba.rename(columns={0:'Rejected',
 
 # Display predicted loan outcome
 st.subheader('Predicted Outcome')
-st.dataframe(df_prediction_proba, 
-             column_config={
-                 'Rejected': st.column_config.ProgressColumn(
-                     'Rejected',
-                     format='%f',
-                     width = 'medium',
-                     min_value=0,
-                     max_value=1
-                 ),
-                 'Approved': st.column_config.ProgressColumn(
-                     'Approved',
-                     format='%f',
-                     width = 'medium',
-                     min_value=0,
-                     max_value=1
-                 ),
-             }, hide_index=True,)
+
+df_prediction_proba
 
 loan_outcome = np.array(['Rejected', 'Approved'])
 st.success(str(loan_outcome[prediction][0]))
