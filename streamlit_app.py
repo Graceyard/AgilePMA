@@ -9,7 +9,7 @@ from sklearn.ensemble import RandomForestClassifier
 st.title('Loan Eligibility Checker 🏠💰🤝')
 st.markdown("""
 ### 🔒 Internal Use Only  
-This tool is designed for internal staff to assess loan eligibility based on predefined criteria.  
+This tool is designed for internal staffs to assess loan eligibility based on predefined criteria.  
 It does not guarantee final loan approval. Please use it for reference purposes only.""")
 
 # Sidebar Title
