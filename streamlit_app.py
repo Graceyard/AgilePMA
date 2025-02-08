@@ -21,6 +21,10 @@ if uploaded_file is not None:
     # Read the CSV file into a Pandas DataFrame
     df = pd.read_csv(uploaded_file)
 
+with st.expander('Data'):
+    st.write('**data**')
+    df1 = pd.read_csv('https://github.com/Graceyard/agilepma/blob/master/cleaned_loan_data.csv')
+
 # Display the uploaded file
     st.write("#### Uploaded Data Preview:")
     st.dataframe(df.head())
