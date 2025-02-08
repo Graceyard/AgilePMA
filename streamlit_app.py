@@ -43,7 +43,10 @@ with st.expander('Data'):
     y = df.Loan_Status
     y
 
+# Data Visualization 
+
 # Distribution Visualization
+with st.expander('Data Distribution Visualization'):
     st.write("#### Loan Status Distribution📊:")
 
 # Check if 'Loan_Status' column exists
