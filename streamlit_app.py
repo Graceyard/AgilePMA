@@ -164,7 +164,7 @@ df_prediction_proba.rename(columns={0:'Rejected',
                                  1:'Approved'})
 
 # Display predicted loan outcome
-st.subheader('Predicted Outcome')
+st.subheader('🎯Predicted Outcome')
 st.dataframe(df_prediction_proba, 
              column_config={
                  'Rejected': st.column_config.ProgressColumn(
