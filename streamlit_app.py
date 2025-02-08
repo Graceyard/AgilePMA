@@ -34,6 +34,15 @@ with st.expander('Data'):
     st.write("#### Uploaded Data Preview:")
     st.dataframe(df.head())
 
+    # X and Y
+    st.write('**X**')
+    X = df.drop('Loan_Status', axis=1)
+    X
+
+    st.write('**y**')
+    y = df.Loan_Status
+    y
+
 # Distribution Visualization
     st.write("#### Loan Status Distribution📊:")
 
@@ -60,15 +69,6 @@ with st.expander('Data'):
 
     else:
         st.error("❌ The uploaded file does not contain a 'Loan_Status' column.")
-
-# X and Y
-st.write('**X**')
-X = df.drop('Loan_Status', axis=1)
-X
-
-st.write('**y**')
-y = df.Loan_Status
-y
 
 # Applicant Information
 st.sidebar.header("Applicant Details")
