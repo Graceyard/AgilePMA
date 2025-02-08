@@ -111,13 +111,13 @@ with st.sidebar:
     # Add the numerical features back to the encoded DataFrame
     df_loan = pd.concat([df_loan, input_loan_status.drop(columns=encode)], axis=1)
     input_row = df_loan[:1]
-    # Show the input row
-    st.write(input_row)
+
+    # Encode y
 
 with st.expander('Input Information'):
     st.write('**Input Information**')
     input_df
     st.write('**Loan data**')
     input_loan_status
-    st.write('Encoded input loan')
-
+    st.write('**Encoded input loan**')
+    input_row
