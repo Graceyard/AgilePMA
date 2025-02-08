@@ -162,3 +162,4 @@ df_prediction_proba = pd.DataFrame(prediction_proba)
 df_prediction_proba.columns = ['Rejected','Approved']
 prediction_proba.rename(columns={0:'Rejected',
                                  1:'Approved'})
+prediction_proba
