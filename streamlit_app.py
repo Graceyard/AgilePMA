@@ -125,6 +125,9 @@ df_loan = pd.concat([df_loan, input_loan_status.drop(columns=encode)], axis=1)
 X = df_loan.iloc[1:]  # All rows except the first
 input_row = df_loan.iloc[:1] # First row 
 
+# Ensure input_row is reshaped to have the correct shape
+input_row_reshaped = input_row.values.reshape(1, -1)
+
 # Encode y
 target_mapper = {'N':0,
                 'Y':1}
@@ -144,8 +147,8 @@ model = RandomForestClassifier(n_estimators=100, random_state=42)
 model.fit(X, y)
 
 # Apply model to make prediction 
-prediction = model.predict(input_row)
-prediction_proba = model.predict_proba(input_row)
+prediction = model.predict(input_row_reshaped)
+prediction_proba = model.predict_proba(input_row_reshaped)
 
 # Display the prediction results
 st.write(f"Prediction: {prediction[0]}")  
