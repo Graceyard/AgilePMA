@@ -110,3 +110,7 @@ with st.expander('Input Information'):
     st.write('**Loan data**')
     input_loan_status
 
+# Encode 
+encode = ['Gender', 'Married', 'Dependents', 'Education', 'Self_Employed', 'Loan_Amount_Term', 'Credit_History', 'Property_Area']
+df_loan = pd.get_dummies(input_loan_status, prefix=encode)
+df_loan[:1]
