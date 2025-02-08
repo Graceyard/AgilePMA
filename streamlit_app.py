@@ -32,7 +32,7 @@ else:
 
 # Display the uploaded file
 with st.expander('Data'):
-    st.write("#### Data Preview🔎:")
+    st.write("#### 🔎 Data Preview:")
     st.dataframe(df.head())
 
     # X and Y
@@ -46,7 +46,7 @@ with st.expander('Data'):
     
 # Distribution Visualization
 with st.expander('Data Distribution Visualization'):
-    st.write("#### Loan Status Distribution📊:")
+    st.write("#### 📊 Loan Status Distribution:")
 
 # Check if 'Loan_Status' column exists
     if "Loan_Status" in df.columns:
