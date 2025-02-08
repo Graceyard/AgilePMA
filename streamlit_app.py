@@ -105,7 +105,7 @@ with st.sidebar:
     input_loan_status = pd.concat([input_df, X], axis = 0)
 
     # Define categorical columns to encode
-    encode = ['Gender', 'Married', 'Dependents', 'Education', 'Self_Employed', 'Property_Area']
+    encode = ['Gender', 'Married', 'Dependents', 'Education', 'Self_Employed', 'Credit_History', 'Property_Area']
     df_loan = pd.get_dummies(input_loan_status[encode], prefix=encode)
 
     # Add the numerical features back to the encoded DataFrame
