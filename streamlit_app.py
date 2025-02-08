@@ -195,3 +195,11 @@ st.dataframe(df_prediction_proba,
 
 loan_outcome = np.array(['Rejected', 'Approved'])
 st.success(str(loan_outcome[prediction][0]))
+
+# Feedback request function
+st.subheader("We value your feedback!")
+feedback = st.text_area("Please share any feedback or suggestions:")
+    
+if st.button("Submit Feedback"):
+    if feedback.strip():
+        st.success("Thank you for your feedback!")
