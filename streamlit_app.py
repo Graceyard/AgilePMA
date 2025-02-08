@@ -97,12 +97,12 @@ with st.sidebar:
             'Dependents': dependents,
             'Education': education,
             'Self_Employed': self_employed,
+            'Property_Area': property_area,
             'ApplicantIncome': applicant_income,
             'CoapplicantIncome': coapplicant_income,
             'LoanAmount': loan_amount,
             'Loan_Amount_Term': loan_amount_term,
-            'Credit_History': credit_history,
-            'Property_Area': property_area}
+            'Credit_History': credit_history}
     input_df = pd.DataFrame(data, index=[0])
     input_loan_status = pd.concat([input_df, X_raw], axis = 0)
 
