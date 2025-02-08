@@ -158,4 +158,6 @@ model.fit(X, y)
 prediction = model.predict(input_row_reshaped)
 prediction_proba = model.predict_proba(input_row_reshaped)
 
+prediction_proba.rename(columns={0:'Rejected',
+                                 1:'Approved'})
 prediction_proba
