@@ -197,8 +197,8 @@ loan_outcome = np.array(['Rejected', 'Approved'])
 st.success(str(loan_outcome[prediction][0]))
 
 
-# Initialize session state for feedback
-sentiment_mapping = ["one", "two", "three", "four", "five"]
-selected = st.feedback("stars")
+# Display a feedback widget with thumbs
+sentiment_mapping = [":material/thumb_down:", ":material/thumb_up:"]
+selected = st.feedback("thumbs")
 if selected is not None:
-    st.markdown(f"You selected {sentiment_mapping[selected]} star(s).")
+    st.markdown(f"You selected: {sentiment_mapping[selected]}")
