@@ -197,14 +197,14 @@ loan_outcome = np.array(['Rejected', 'Approved'])
 st.success(str(loan_outcome[prediction][0]))
 
 # Initialize session state for feedback
-    if "feedback" not in st.session_state:
-        st.session_state.feedback = ""
+if "feedback" not in st.session_state:
+    st.session_state.feedback = ""
 
-    # Feedback request section
-    st.subheader("We value your feedback!")
-    feedback = st.text_area("Please share any feedback or suggestions:", value=st.session_state.feedback, key="feedback_input")
+# Feedback request section
+st.subheader("We value your feedback!")
+feedback = st.text_area("Please share any feedback or suggestions:", value=st.session_state.feedback, key="feedback_input")
 
-    if st.button("Submit Feedback"):
-        st.success("Thank you for your feedback!")
-        st.session_state.feedback = ""
-        st.rerun()  
+if st.button("Submit Feedback"):
+    st.success("Thank you for your feedback!")
+    st.session_state.feedback = ""
+    st.rerun()  
