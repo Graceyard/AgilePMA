@@ -113,7 +113,7 @@ with st.expander('Input Information'):
 
 # Data Preparation
 # Define categorical columns to encode (X)
-encode = ['Gender', 'Married', 'Dependents', 'Education', 'Self_Employed', 'Credit_History', 'Property_Area']
+encode = ['Gender', 'Married', 'Dependents', 'Education', 'Self_Employed', 'Property_Area']
 df_loan = pd.get_dummies(input_loan_status[encode], prefix=encode)
 
 # Add the numerical features back to the encoded DataFrame
