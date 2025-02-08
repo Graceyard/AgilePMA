@@ -162,4 +162,9 @@ df_prediction_proba = pd.DataFrame(prediction_proba)
 df_prediction_proba.columns = ['Rejected','Approved']
 df_prediction_proba.rename(columns={0:'Rejected',
                                  1:'Approved'})
-df_prediction_proba
+# df_prediction_proba
+
+# Display predicted outcome of loan status
+st.subheader('Predicted Outcome')
+loan_outcome = np.array(['Rejected', 'Approved'])
+st.success(str(loan_outcome[prediction][0]))
