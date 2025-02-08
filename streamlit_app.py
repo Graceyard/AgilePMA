@@ -60,11 +60,6 @@ else:
     else:
         st.error("❌ The uploaded file does not contain a 'Loan_Status' column.")
 
-else:
-    st.info("📤 Please upload a CSV file to proceed.")
-
-# If data is not uploaded
-
 
 # Applicant Information
 st.sidebar.header("Applicant Details")
