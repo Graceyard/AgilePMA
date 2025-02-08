@@ -91,6 +91,14 @@ with st.sidebar:
     loan_amount_term = st.selectbox("Loan_Amount_Term", ["12", "36", "60", "84", "120", "180", "240", "300", "360", "480"])
     credit_history = st.radio("Credit History Meets Guidelines?", ["0", "1"])
 
+# Check if 'ApplicantIncome' or 'CoapplicantIncome' are empty
+if not applicant_income or not coapplicant_income:
+    st.error("❌ Please fill in all the financial details!")
+else:
+    # Convert empty string inputs to 0 (or any other default value you'd prefer)
+    applicant_income = float(applicant_income) if applicant_income else 0
+    coapplicant_income = float(coapplicant_income) if coapplicant_income else 0
+    
 # Create DF for input features 
     data = {'Gender': gender,
             'Married': married,
@@ -150,6 +158,4 @@ model.fit(X, y)
 prediction = model.predict(input_row_reshaped)
 prediction_proba = model.predict_proba(input_row_reshaped)
 
-# Display the prediction results
-st.write(f"Prediction: {prediction[0]}")  
-st.write(f"Prediction Probability: {prediction_proba[0]}") 
+prediction_proba
