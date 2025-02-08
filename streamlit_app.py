@@ -18,7 +18,7 @@ st.sidebar.title("Loan Eligibility Checker")
 uploaded_file = st.sidebar.file_uploader("Upload a CSV file 📤", type=["csv"])
 
 # GitHub dataset URL 
-github_url = "https://raw.githubusercontent.com/Graceyard/agilepma/refs/heads/master/cleaned_loan_data.csv"
+github_url = "https://raw.githubusercontent.com/Graceyard/agilepma/refs/heads/master/Cleaned_loan_data%20copy.csv"
 
 # Load data from either uploaded file or GitHub
 if uploaded_file is not None:
