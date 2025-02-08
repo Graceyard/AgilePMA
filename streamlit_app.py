@@ -119,6 +119,8 @@ df_loan = pd.get_dummies(input_loan_status[encode], prefix=encode)
 
 # Add the numerical features back to the encoded DataFrame
 df_loan = pd.concat([df_loan, input_loan_status.drop(columns=encode)], axis=1)
+
+X = df_loan[1:]
 input_row = df_loan[:1]
 
 # Encode y
@@ -138,7 +140,7 @@ with st.expander('Data Preparation'):
 
 # Use RF to train the classification model (refer Colab)
 model = RandomForestClassifier(n_estimators=100, random_state=42)
-model.fit(X_raw, y)
+model.fit(X, y)
 
 # Apply model to make prediction 
 prediction = model.predict(input_row)
