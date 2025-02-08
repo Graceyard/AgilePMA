@@ -36,12 +36,12 @@ with st.expander('Data'):
 
     # X and Y
     st.write('**X**')
-    X = df.drop('Loan_Status', axis=1)
-    X
+    X_raw = df.drop('Loan_Status', axis=1)
+    X_raw
 
     st.write('**y**')
-    y = df.Loan_Status
-    y
+    y_raw = df.Loan_Status
+    y_raw
     
 # Distribution Visualization
 with st.expander('Data Distribution Visualization'):
@@ -102,7 +102,7 @@ with st.sidebar:
             'Credit_History': credit_history,
             'Property_Area': property_area}
     input_df = pd.DataFrame(data, index=[0])
-    input_loan_status = pd.concat([input_df, X], axis = 0)
+    input_loan_status = pd.concat([input_df, X_raw], axis = 0)
 
     # Define categorical columns to encode
     encode = ['Gender', 'Married', 'Dependents', 'Education', 'Self_Employed', 'Credit_History', 'Property_Area']
@@ -113,6 +113,11 @@ with st.sidebar:
     input_row = df_loan[:1]
 
     # Encode y
+    target_mapper = {'N':0,
+                     'Y':1}
+    #customize function
+    def target_encode(val):
+        return target_mapper[val]
 
 with st.expander('Input Information'):
     st.write('**Input Information**')
