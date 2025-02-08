@@ -197,8 +197,8 @@ loan_outcome = np.array(['Rejected', 'Approved'])
 st.success(str(loan_outcome[prediction][0]))
 
 # Initialize session state for feedback
-    if "feedback" not in st.session_state:
-        st.session_state.feedback = ""
+if "feedback" not in st.session_state:
+    st.session_state.feedback = ""
 
 # Feedback request section
 st.subheader("We value your feedback!")
