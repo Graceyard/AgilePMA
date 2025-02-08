@@ -125,7 +125,7 @@ input_row = df_loan[:1]
 
 # Encode y
 target_mapper = {'N':0,
-                     'Y':1}
+                'Y':1}
 #customize function
 def target_encode(val):
     return target_mapper[val]
