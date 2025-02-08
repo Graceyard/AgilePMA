@@ -5,18 +5,15 @@ import seaborn as sns
 import matplotlib.pyplot as plt 
 from sklearn.ensemble import RandomForestClassifier
 
-st.title("Data Access Agreement")
 
 # Checkbox for agreement
 agree = st.checkbox("I confirm that I will not train any models or algorithms using this data.")
 
 # Only show content if the user agrees
 if agree:
-    st.subheader("Welcome to the Data Dashboard")
+    st.title("Data Dashboard")
     st.write("Now you can access the data and insights here.")
-    # Add your data display logic here
-else:
-    st.warning("Please agree to the terms to proceed.")
+    # Add your data display logic here (tables, charts, etc.)
 
 # Streamlit Title
 st.title('Loan Eligibility Checker 🏠💰🤝')
