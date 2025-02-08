@@ -3,3 +3,4 @@ numpy
 panda
 matplotlib
 scikit-learn
+seaborn
