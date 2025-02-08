@@ -85,10 +85,10 @@ with st.sidebar:
 # Financial & Property Information
     st.header("Financial Details")
     property_area = st.radio("Property Area", ["Rural", "Semiurban", "Urban"])
-    applicant_income = st.text_input("Applicant Income ($)")
-    coapplicant_income = st.text_input("Co-applicant Income ($)")
-    loan_amount = st.slider("Loan Amount (in thousands)", min_value=1, max_value=500, step=1, value=100)
-    loan_amount_term = st.selectbox("Loan_Amount_Term", ["12", "36", "60", "84", "120", "180", "240", "300", "360", "480"])
+    applicant_income = st.text_input("Applicant Income (monthly) ($)")
+    coapplicant_income = st.text_input("Co-applicant Income (monthly) ($)")
+    loan_amount = st.slider("Loan Amount (in thousands) ($)", min_value=1, max_value=500, step=1, value=100)
+    loan_amount_term = st.selectbox("Loan Amount Term", ["12", "36", "60", "84", "120", "180", "240", "300", "360", "480"])
     credit_history = st.radio("Credit History Meets Guidelines?", ["0", "1"])
 
 # Check if 'ApplicantIncome' or 'CoapplicantIncome' are empty
