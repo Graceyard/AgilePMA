@@ -104,9 +104,6 @@ with st.sidebar:
     input_df = pd.DataFrame(data, index=[0])
     input_loan = pd.concat([input_df, X], axis = 0)
 
-# Example: X = pd.read_csv("your_dataset.csv")
-X = pd.DataFrame(columns=raw_columns)  # Dummy placeholder for the sake of the example.
-
 # Ensure the input features and raw data columns are aligned (same order and names)
 input_df = input_df[raw_columns[:-1]]  # Remove 'Loan_Status' as it's the target, not an input feature
 
