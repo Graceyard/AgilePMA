@@ -217,3 +217,14 @@ if selected == sentiment_mapping[1]:  # Thumbs down
             st.warning("Please provide feedback before submitting.")
 else:
     st.markdown(f"Thank you for your feedback!")
+
+# Sidebar: Download button to download the CSV file with all feedback
+with st.sidebar:
+    st.subheader("Download All Feedback")
+    with open("feedback.csv", "rb") as file:
+        st.download_button(
+            label="Download Feedback CSV",
+            data=file,
+            file_name="feedback.csv",
+            mime="text/csv"
+        )
