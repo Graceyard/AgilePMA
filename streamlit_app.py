@@ -105,4 +105,5 @@ with st.sidebar:
     input_loan = pd.concat([input_df, X], axis = 0)
 
 input_loan
+# input_loan
 
