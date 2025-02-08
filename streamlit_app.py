@@ -30,7 +30,7 @@ else:
     df = pd.read_csv(github_url)
 
 # Display the uploaded file
-with st.expander('Data')
+with st.expander('Data'):
     st.write("#### Uploaded Data Preview:")
     st.dataframe(df.head())
 
