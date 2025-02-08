@@ -144,7 +144,7 @@ model = RandomForestClassifier(n_estimators=100, random_state=42)
 model.fit(X, y)
 
 # Apply model to make prediction 
-prediction = model.predict(input_row)
-prediction_proba = model.predict_proba(input_row)
+prediction = model.predict(X)
+prediction_proba = model.predict_proba(X)
 
 prediction_proba
