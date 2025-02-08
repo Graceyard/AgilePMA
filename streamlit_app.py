@@ -202,7 +202,7 @@ sentiment_mapping = [":material/thumb_up:", ":material/thumb_down:"]
 selected = st.radio("Please provide your feedback", sentiment_mapping, index=1)
 
 # If thumbs down is selected, show feedback box and submit button
-if selected == sentiment_mapping[0]:  # Thumbs down
+if selected == sentiment_mapping[1]:  # Thumbs down
     st.subheader("**Please share your feedback on why you gave a thumbs down:**")
     feedback = st.text_area("Your feedback:")
     
