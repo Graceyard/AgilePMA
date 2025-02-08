@@ -104,6 +104,9 @@ with st.sidebar:
     input_df = pd.DataFrame(data, index=[0])
     input_loan_status = pd.concat([input_df, X], axis = 0)
 
-input_df
-# input_loan_status
+with st.expander('Input Information'):
+    st.write('**Input Information**')
+    input_df
+    st.write('**Loan data**')
+    input_loan_status
 
