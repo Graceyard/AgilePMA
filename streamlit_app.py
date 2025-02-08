@@ -98,7 +98,7 @@ with st.sidebar:
             'applicant_income': applicant_income,
             'coapplicant_income': coapplicant_income,
             'loan_amount': loan_amount,
-            'loan_amount_term: loan_amount_term,
+            'loan_amount_term': loan_amount_term,
             'credit_history': credit_history,
             'property_area': property_area}
     input_df = pd.DataFrame(data, index=[0])
