@@ -210,6 +210,10 @@ if selected == sentiment_mapping[1]:  # Thumbs down
     if st.button("Submit Feedback"):
         if feedback.strip():
             st.success("Thank you for your feedback!")
+            # Save feedback to a CSV file
+            df = pd.DataFrame([{"feedback": feedback}])
+            df.to_csv("feedback.csv", mode="a", header=False, index=False)  
+            st.text_area("Your feedback:", value="", key="feedback_input")  
         else:
             st.warning("Please provide feedback before submitting.")
 else:
