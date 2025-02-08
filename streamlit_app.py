@@ -102,8 +102,9 @@ with st.sidebar:
             'CoapplicantIncome': coapplicant_income,
             'LoanAmount': loan_amount,
             'Loan_Amount_Term': loan_amount_term,
-            'Credit_History': credit_history}
+            'Credit_History': float(credit_history)}
     input_df = pd.DataFrame(data, index=[0])
+    
     input_loan_status = pd.concat([input_df, X_raw], axis = 0)
 
 with st.expander('Input Information'):
@@ -127,7 +128,6 @@ input_row = df_loan.iloc[:1] # First row
 # Encode y
 target_mapper = {'N':0,
                 'Y':1}
-#customize function
 def target_encode(val):
     return target_mapper[val]
 
@@ -144,7 +144,9 @@ model = RandomForestClassifier(n_estimators=100, random_state=42)
 model.fit(X, y)
 
 # Apply model to make prediction 
-prediction = model.predict(X)
-prediction_proba = model.predict_proba(X)
+prediction = model.predict(input_row)
+prediction_proba = model.predict_proba(input_row)
 
-prediction_proba
+# Display the prediction results
+st.write(f"Prediction: {prediction[0]}")  
+st.write(f"Prediction Probability: {prediction_proba[0]}") 
