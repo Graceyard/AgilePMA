@@ -31,7 +31,7 @@ else:
 
 # Display the uploaded file
 with st.expander('Data'):
-    st.write("#### Data Preview:")
+    st.write("#### Data Preview🔎:")
     st.dataframe(df.head())
 
     # X and Y
