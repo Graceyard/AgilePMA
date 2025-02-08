@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt 
+from sklearn.ensemble import RandomForestClassifier
 
 # Streamlit Title
 st.title('Loan Eligibility Checker 🏠💰🤝')
@@ -134,3 +135,13 @@ with st.expander('Data Preparation'):
     input_row
     st.write('**Encoded y**')
     y
+
+# Use RF to train the classification model (refer Colab)
+model = RandomForestClassifier(n_estimators=100, random_state=42)
+model.fit(X_raw, y)
+
+# Apply model to make prediction 
+prediction = model.predict(input_row)
+prediction_proba = model.predict_proba(input_row)
+
+prediction_proba
