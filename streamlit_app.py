@@ -120,8 +120,11 @@ df_loan = pd.get_dummies(input_loan_status[encode], prefix=encode)
 # Add the numerical features back to the encoded DataFrame
 df_loan = pd.concat([df_loan, input_loan_status.drop(columns=encode)], axis=1)
 
-X = df_loan[1:]
-input_row = df_loan[:1]
+# Use iloc to slice
+X = df_loan.iloc[1:]  # All rows except the first
+input_row = df_loan.iloc[:1] # First row 
+
+# Reshape input_row
 input_row_reshaped = input_row.values.reshape(1, -1)
 
 # Encode y
