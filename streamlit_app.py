@@ -197,8 +197,22 @@ loan_outcome = np.array(['Rejected', 'Approved'])
 st.success(str(loan_outcome[prediction][0]))
 
 
-# Display a feedback widget with thumbs
+# Display a feedback widget with thumbs up/down
 sentiment_mapping = [":material/thumb_down:", ":material/thumb_up:"]
-selected = st.feedback("thumbs")
-if selected is not None:
-    st.markdown(f"You selected: {sentiment_mapping[selected]}")
+selected = st.radio("Please provide your feedback", sentiment_mapping, index=1)
+
+# If thumbs down is selected, show feedback box and submit button
+if selected == sentiment_mapping[0]:  # Thumbs down
+    st.subheader("Please share your feedback on why you gave a thumbs down:")
+    feedback = st.text_area("Your feedback:")
+    
+    # Submit button for feedback
+    if st.button("Submit Feedback"):
+        if feedback.strip():
+            st.success("Thank you for your feedback!")
+            # Reset the feedback box
+            st.text_area("Your feedback:", value="", key="feedback_input")
+        else:
+            st.warning("Please provide feedback before submitting.")
+else:
+    st.markdown(f"You selected: {selected}")
