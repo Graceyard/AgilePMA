@@ -42,9 +42,7 @@ with st.expander('Data'):
     st.write('**y**')
     y = df.Loan_Status
     y
-
-# Data Visualization 
-
+    
 # Distribution Visualization
 with st.expander('Data Distribution Visualization'):
     st.write("#### Loan Status Distribution📊:")
@@ -73,7 +71,7 @@ with st.expander('Data Distribution Visualization'):
     else:
         st.error("❌ The uploaded file does not contain a 'Loan_Status' column.")
 
-# Applicant Information
+# Applicant Information (Input features)
 st.sidebar.header("Applicant Details")
 gender = st.sidebar.selectbox("Gender", ["Female", "Male"])
 married = st.sidebar.selectbox("Married Status", ["No", "Yes"])
@@ -89,3 +87,20 @@ loan_amount = st.sidebar.slider("Loan Amount (in thousands)", min_value=1, max_v
 loan_amount_term = st.sidebar.selectbox("Loan_Amount_Term", ["12", "36", "60", "84", "120", "180", "240", "300", "360", "480"])
 credit_history = st.sidebar.radio("Credit History Meets Guidelines?", ["Yes", "No"])
 property_area = st.sidebar.radio("Property Area", ["Rural", "Semi-Urban", "Urban"])
+
+# Create DF for input features 
+data = {'gender': gender,
+        'married': married,
+        'dependents': dependents,
+        'education': education,
+        'self_employed': self_employed,
+        'applicant_income': applicant_income,
+        'coapplicant_income': coapplicant_income,
+        'loan_amount': loan_amount,
+        'credit_history': credit_history,
+        'property_area': property_area}
+input_df = pd.DataFrame(data, index=[0])
+input_loan = pd.concat([input_df, X], axis = 0)
+
+input_loan
+
