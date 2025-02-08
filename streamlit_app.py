@@ -30,6 +30,7 @@ else:
     df = pd.read_csv(github_url)
 
 # Display the uploaded file
+with st.expander('Data')
     st.write("#### Uploaded Data Preview:")
     st.dataframe(df.head())
 
@@ -60,6 +61,14 @@ else:
     else:
         st.error("❌ The uploaded file does not contain a 'Loan_Status' column.")
 
+# X and Y
+st.write('**X**')
+X = df.drop('Loan_Status', axis=1)
+X
+
+st.write('**y**')
+y = df.Loan_Status
+y
 
 # Applicant Information
 st.sidebar.header("Applicant Details")
