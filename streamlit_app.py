@@ -78,7 +78,7 @@ with st.sidebar:
     gender = st.selectbox("Gender", ["Female", "Male"])
     married = st.selectbox("Married Status", ["No", "Yes"])
     dependents = st.selectbox("Number of Dependents", ["0", "1", "2", "3+"])
-    education = st.selectbox("Education Level", ["Undergraduate", "Graduate"])
+    education = st.selectbox("Education Level", ["Not Graduate", "Graduate"])
     self_employed = st.selectbox("Self-Employed", ["No", "Yes"])
 
 # Financial & Property Information
