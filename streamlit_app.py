@@ -102,14 +102,8 @@ with st.sidebar:
             'Credit_History': credit_history,
             'Property_Area': property_area}
     input_df = pd.DataFrame(data, index=[0])
-    input_loan = pd.concat([input_df, X], axis = 0)
+    input_loan_status = pd.concat([input_df, X], axis = 0)
 
-# Ensure the input features and raw data columns are aligned (same order and names)
-input_df = input_df[raw_columns[:-1]]  # Remove 'Loan_Status' as it's the target, not an input feature
-
-# Concatenate the new input data (input_df) with your training dataset (X)
-input_loan = pd.concat([input_df, X], axis=0, ignore_index=True)
-
-# Show the result
-st.write(input_loan)
+input_df
+# input_loan_status
 
