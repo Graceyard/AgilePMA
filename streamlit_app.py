@@ -90,17 +90,17 @@ with st.sidebar:
     property_area = st.radio("Property Area", ["Rural", "Semi-Urban", "Urban"])
 
 # Create DF for input features 
-    data = {'gender': gender,
-            'married': married,
-            'dependents': dependents,
-            'education': education,
-            'self_employed': self_employed,
-            'applicant_income': applicant_income,
-            'coapplicant_income': coapplicant_income,
-            'loan_amount': loan_amount,
-            'loan_amount_term': loan_amount_term,
-            'credit_history': credit_history,
-            'property_area': property_area}
+    data = {'Gender': gender,
+            'Married': married,
+            'Dependents': dependents,
+            'Education': education,
+            'Self_Employed': self_employed,
+            'ApplicantIncome': applicant_income,
+            'CoapplicantIncome': coapplicant_income,
+            'LoanAmount': loan_amount,
+            'Loan_Amount_Term': loan_amount_term,
+            'Credit_History': credit_history,
+            'Property_Area': property_area}
     input_df = pd.DataFrame(data, index=[0])
     input_loan = pd.concat([input_df, X], axis = 0)
 
