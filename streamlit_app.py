@@ -114,3 +114,6 @@ with st.expander('Input Information'):
 encode = ['Gender', 'Married', 'Dependents', 'Education', 'Self_Employed', 'Loan_Amount_Term', 'Credit_History', 'Property_Area']
 df_loan = pd.get_dummies(input_loan_status, prefix=encode)
 df_loan[:1]
+
+print(input_loan_status.columns)
+
