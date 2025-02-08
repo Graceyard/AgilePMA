@@ -71,6 +71,7 @@ with st.expander('Data Distribution Visualization'):
     else:
         st.error("❌ The uploaded file does not contain a 'Loan_Status' column.")
 
+#Input features 
 # Applicant Information (Input features)
 with st.sidebar:
     st.header("Applicant Details")
@@ -104,7 +105,14 @@ with st.sidebar:
     input_df = pd.DataFrame(data, index=[0])
     input_loan_status = pd.concat([input_df, X_raw], axis = 0)
 
-# Define categorical columns to encode
+with st.expander('Input Information'):
+    st.write('**Input Information**')
+    input_df
+    st.write('**Loan data**')
+    input_loan_status
+
+# Data Preparation
+# Define categorical columns to encode (X)
 encode = ['Gender', 'Married', 'Dependents', 'Education', 'Self_Employed', 'Credit_History', 'Property_Area']
 df_loan = pd.get_dummies(input_loan_status[encode], prefix=encode)
 
@@ -123,10 +131,8 @@ y = y_raw.apply(target_encode)
 y
 y_raw
 
-with st.expander('Input Information'):
-    st.write('**Input Information**')
-    input_df
-    st.write('**Loan data**')
-    input_loan_status
-    st.write('**Encoded input loan**')
+with st.expander('Data Preparation')
+    st.write('**Encoded input loan (X)**')
     input_row
+    st.write('**Encoded y**')
+    y
