@@ -142,6 +142,10 @@ with st.expander('Data Preparation'):
     st.write('**Encoded y**')
     y
 
+# Ensure input_row alinged with the model input
+model_columns = X.columns
+input_row_reshaped = pd.DataFrame(input_row_reshaped, columns=model_columns)
+
 # Use RF to train the classification model (refer Colab)
 model = RandomForestClassifier(n_estimators=100, random_state=42)
 model.fit(X, y)
