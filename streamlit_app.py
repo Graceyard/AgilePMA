@@ -104,20 +104,24 @@ with st.sidebar:
     input_df = pd.DataFrame(data, index=[0])
     input_loan_status = pd.concat([input_df, X_raw], axis = 0)
 
-    # Define categorical columns to encode
-    encode = ['Gender', 'Married', 'Dependents', 'Education', 'Self_Employed', 'Credit_History', 'Property_Area']
-    df_loan = pd.get_dummies(input_loan_status[encode], prefix=encode)
+# Define categorical columns to encode
+encode = ['Gender', 'Married', 'Dependents', 'Education', 'Self_Employed', 'Credit_History', 'Property_Area']
+df_loan = pd.get_dummies(input_loan_status[encode], prefix=encode)
 
-    # Add the numerical features back to the encoded DataFrame
-    df_loan = pd.concat([df_loan, input_loan_status.drop(columns=encode)], axis=1)
-    input_row = df_loan[:1]
+# Add the numerical features back to the encoded DataFrame
+df_loan = pd.concat([df_loan, input_loan_status.drop(columns=encode)], axis=1)
+input_row = df_loan[:1]
 
-    # Encode y
-    target_mapper = {'N':0,
+# Encode y
+target_mapper = {'N':0,
                      'Y':1}
-    #customize function
-    def target_encode(val):
-        return target_mapper[val]
+#customize function
+def target_encode(val):
+    return target_mapper[val]
+
+y = y_raw.apply(target_encode)
+y
+y_raw
 
 with st.expander('Input Information'):
     st.write('**Input Information**')
