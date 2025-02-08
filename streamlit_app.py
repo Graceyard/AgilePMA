@@ -84,7 +84,7 @@ with st.sidebar:
 
 # Financial & Property Information
     st.header("Financial Details")
-    property_area = st.radio("Property Area", ["Rural", "Semi-Urban", "Urban"])
+    property_area = st.radio("Property Area", ["Rural", "Semiurban", "Urban"])
     applicant_income = st.text_input("Applicant Income ($)")
     coapplicant_income = st.text_input("Co-applicant Income ($)")
     loan_amount = st.slider("Loan Amount (in thousands)", min_value=1, max_value=500, step=1, value=100)
