@@ -17,9 +17,17 @@ st.sidebar.title("Loan Eligibility Checker")
 # Sidebar: File Uploader function
 uploaded_file = st.sidebar.file_uploader("Upload a CSV file 📤", type=["csv"])
 
+# GitHub dataset URL 
+github_url = "https://github.com/Graceyard/agilepma/blob/master/cleaned_loan_data.csv"
+
+# Load data from either uploaded file or GitHub
 if uploaded_file is not None:
     # Read the CSV file into a Pandas DataFrame
     df = pd.read_csv(uploaded_file)
+    st.success("✅ File uploaded successfully!")
+else:
+    st.warning("📤 No file uploaded. Loading sample data from GitHub...")
+    df = pd.read_csv(github_url)
 
 # Display the uploaded file
     st.write("#### Uploaded Data Preview:")
@@ -54,6 +62,9 @@ if uploaded_file is not None:
 
 else:
     st.info("📤 Please upload a CSV file to proceed.")
+
+# If data is not uploaded
+
 
 # Applicant Information
 st.sidebar.header("Applicant Details")
