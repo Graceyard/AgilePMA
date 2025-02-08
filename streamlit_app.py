@@ -213,4 +213,4 @@ if selected == sentiment_mapping[0]:  # Thumbs down
         else:
             st.warning("Please provide feedback before submitting.")
 else:
-    st.markdown(f"You selected: {selected}")
+    st.markdown(f"Thank you for your feedback!")
