@@ -170,16 +170,16 @@ st.dataframe(df_prediction_proba,
                  'Rejected': st.column_config.ProgressColumn(
                      'Rejected',
                      format='%f',
-                     width 'medium',
-                     min_value = 0,
-                     max_value = 1
+                     width = 'medium',
+                     min_value=0,
+                     max_value=1
                  ),
                  'Approved': st.column_config.ProgressColumn(
                      'Approved',
                      format='%f',
-                     width 'medium',
-                     min_value = 0,
-                     max_value = 1
+                     width = 'medium',
+                     min_value=0,
+                     max_value=1
                  ),
              }, hide_index=True,)
 
