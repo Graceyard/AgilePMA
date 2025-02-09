@@ -4,6 +4,7 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt 
 from sklearn.ensemble import RandomForestClassifier
+import os
 
 # Streamlit Title
 st.title('Loan Eligibility Checker 🏠💰🤝')
@@ -186,7 +187,6 @@ st.dataframe(df_prediction_proba,
 loan_outcome = np.array(['Rejected', 'Approved'])
 st.success(str(loan_outcome[prediction][0]))
 
-
 # Display a feedback widget with thumbs up/down
 sentiment_mapping = [":material/thumb_up:", ":material/thumb_down:"]
 selected = st.radio("Please provide your feedback", sentiment_mapping, index=1)
@@ -208,3 +208,42 @@ if selected == sentiment_mapping[1]:  # Thumbs down
 else:
     st.markdown(f"Thank you for your feedback!")
 
+import pandas as pd
+import streamlit as st
+import os
+
+# Display a feedback widget with thumbs up/down
+sentiment_mapping = [":material/thumb_up:", ":material/thumb_down:"]
+selected = st.radio("Please provide your feedback", sentiment_mapping, index=1)
+
+# If thumbs down is selected, show feedback box and submit button
+if selected == sentiment_mapping[1]:  # Thumbs down
+    st.markdown("**Please share your feedback on why you gave a thumbs down:**")
+    feedback = st.text_area("Your feedback:")
+    
+    # Submit button for feedback
+    if st.button("Submit Feedback"):
+        if feedback.strip():
+            st.success("Thank you for your feedback!")
+            # Save feedback to a CSV file
+            df = pd.DataFrame([{"feedback": feedback}])
+            df.to_csv("feedback.csv", mode="a", header=not os.path.exists("feedback.csv"), index=False)   
+        else:
+            st.warning("Please provide feedback before submitting.")
+else:
+    st.markdown(f"Thank you for your feedback!")
+
+# Sidebar: Download button to download the CSV file with all feedback
+with st.sidebar:
+    st.subheader("Download All Feedback")
+    # Check if feedback.csv exists before allowing download
+    if os.path.exists("feedback.csv"):
+        with open("feedback.csv", "rb") as file:
+            st.download_button(
+                label="Download Feedback CSV",
+                data=file,
+                file_name="feedback.csv",
+                mime="text/csv"
+            )
+    else:
+        st.warning("No feedback data available to download.")
