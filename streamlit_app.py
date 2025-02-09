@@ -11,7 +11,6 @@ agree = st.checkbox("I confirm that I will not train any models or algorithms us
 
 # Only show content if the user agrees
 if agree:
-    st.title("Data Dashboard")
     st.write("Now you can access the data and insights here.")
     # Add your data display logic here (tables, charts, etc.)
 
