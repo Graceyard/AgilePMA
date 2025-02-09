@@ -75,9 +75,9 @@ with st.expander('Data Distribution Visualization'):
 #Input features 
 # Applicant Information (Input features)
 with st.sidebar:
-    st.header("Applicant Details")
+    st.header("Applicant Personal Information")
     gender = st.selectbox("Gender", ["Female", "Male"])
-    married = st.selectbox("Married Status", ["No", "Yes"])
+    married = st.selectbox("Marital Status", ["No", "Yes"])
     dependents = st.selectbox("Number of Dependents", ["0", "1", "2", "3+"])
     education = st.selectbox("Education Level", ["Not Graduate", "Graduate"])
     self_employed = st.selectbox("Self-Employed", ["No", "Yes"])
