@@ -4,6 +4,7 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt 
 from sklearn.ensemble import RandomForestClassifier
+import os
 
 # Streamlit Title
 st.title('Loan Eligibility Checker 🏠💰🤝')
